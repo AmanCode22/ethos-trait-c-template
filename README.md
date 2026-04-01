@@ -1,2 +1,79 @@
-# ethos-trait-c
-Template api for hard traits in c for forge.
+# Ethos Trait C
+
+Template for creating C Hard Traits for Ethos.
+
+Fork this repo to build your own native extension. CI workflows automatically build binaries for all 7 platforms (Linux, macOS, Windows, Termux) and submit your trait to Ethos Foundry.
+
+## Quick Start
+
+1. **Fork this repo** → Rename it to `ethos-trait-<your-trait-name>`.
+2. **Edit `trait.config.json`** → Set your trait name, version, and description.
+3. **Write your code** → Edit `src/trait.c` with your C functions.
+4. **Tag a release** → Push a tag like `v1.0.0`.
+5. **Wait for CI** → Workflows build binaries and open a PR to Foundry automatically.
+
+That's it. I review the PR. If it passes, your trait is live.
+
+## Requirements
+
+- **All 7 platforms must be supported.** Your code must compile on Linux, macOS, Windows, and Termux. If not supported then first open issue on foundry otherwise pr would be rejected.
+- **No platform-specific code** unless wrapped in `#ifdef` checks.
+- **Public license.** MIT, Apache-2.0, etc. No proprietary licenses for Foundry traits.
+
+## File Structure
+
+- `src/trait.c` → Your C code. Export functions here.
+- `CMakeLists.txt` → Build config. Don't change unless you know CMake.
+- `trait.config.json` → Metadata (name, author, description). Used to generate `manifest.json`.
+- `.github/workflows/` → CI/CD. Don't edit unless adding new platforms.
+
+## Writing Functions
+
+Every function you want to use in Ethos must be exported in `src/trait.c`.
+
+Example:
+```c
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+Then list it in `trait.config.json` under `functions`. The CI workflow reads this and generates the Foundry manifest.
+
+**Supported Types:**
+- `int`, `float`, `double`, `char *`, `void`, etc. (See Ethos Foundry docs for full list).
+
+## Releasing
+
+1. Push your changes.
+2. Create a GitHub Release with a tag (e.g., `v1.0.0`).
+3. CI triggers automatically.
+4. Binaries upload to Releases.
+5. A PR opens on `ethos-foundry` with your manifest.
+
+## Updating
+
+For example to release v2.0.0:
+1. Update code.
+2. Tag `v2.0.0`.
+3. CI opens a new PR to Foundry with updated binaries.
+
+## Rules
+
+- **Trait name** in `trait.config.json` must match the repo name (e.g., `ethos-trait-mymath` → name: `mymath`).
+- **No binaries in repo.** Only source code. Binaries go to GitHub Releases.
+- **All platforms required.** If your code doesn't compile on Windows or Termux, then open issue on foundry first otherwise pr would be rejected as ethos is aimed to be mostly cross platform.
+
+## Links
+
+- [Ethos Foundry](https://github.com/AmanCode22/ethos-foundry)
+- [Ethos Docs](https://github.com/AmanCode22/ethos-lang/blob/main/DOCS.md)
+- [Forge](https://github.com/AmanCode22/forge)
+
+## License
+
+MIT. Free to use, free to contribute.
+
+---
+
+Built by Aman (Class 9, India). Solo project. Questions? Open an issue.
