@@ -61,7 +61,7 @@ For example to release v2.0.0:
 
 ## Rules
 
-- **Trait name** in `manfieest.json` must match the repo name (e.g., `ethos-trait-mymath` → name: `mymath`).
+- **Trait name** in `manfiest.json` must match the repo name (e.g., `ethos-trait-mymath` → name: `mymath`).
 - **No binaries in repo.** Only source code. Binaries go to GitHub Releases.
 - **All platforms required.** If your code doesn't compile on Windows or Termux, then open issue on foundry first otherwise pr would be rejected as ethos is aimed to be mostly cross platform.
 
