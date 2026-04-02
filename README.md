@@ -8,6 +8,7 @@ Fork this repo to build your own native extension. CI workflows automatically bu
 
 1. **Fork this repo** → Rename it to `ethos-trait-<your-trait-name>`.
 2. **Edit `manifest.json`** → Set your trait name, version, and description.
+3. **Edit `CMakeLists.txt** → Set trait name on first line.
 3. **Write your code** → Edit `src/trait.c` with your C functions.
 4. **Tag a release** → Push a tag like `v1.0.0`.
 5. **Wait for CI** → Workflows build binaries and open a PR to Foundry automatically.
@@ -23,7 +24,7 @@ That's it. I review the PR. If it passes, your trait is live.
 ## File Structure
 
 - `src/trait.c` → Your C code. Export functions here.
-- `CMakeLists.txt` → Build config. Don't change unless you know CMake.
+- `CMakeLists.txt` → Build config. Just edit first line to put your trait name.Don't change anything else unless you know CMake.
 - `manifest.json` → Metadata (name, author, description). Used to generate `manifest.json` on foundry and used as manifest in forge. Use Ethos docs for reference on editing manifest.json. 
 - `.github/workflows/` → CI/CD. Don't edit unless adding new platforms.
 - `LICENSE` → Any non proprietary license.
@@ -60,8 +61,7 @@ For example to release v2.0.0:
 3. CI opens a new PR to Foundry with updated binaries.
 
 ## Rules
-
-- **Trait name** in `manifest.json` must match the repo name (e.g., `ethos-trait-mymath` → name: `mymath`).
+- **Trait name** in `manifest.json` must match the repo name (e.g., `ethos-trait-mymath` → name: `mymath`. Same name should also be used in `CMakeLists.txt` first line as project name.
 - **No binaries in repo.** Only source code. Binaries go to GitHub Releases.
 - **All platforms required.** If your code doesn't compile on Windows or Termux, then open issue on foundry first otherwise pr would be rejected as ethos is aimed to be mostly cross platform.
 
