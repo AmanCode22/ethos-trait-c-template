@@ -25,7 +25,7 @@ That's it. I review the PR. If it passes, your trait is live.
 
 - `src/trait.c` → Your C code. Export functions here.
 - `CMakeLists.txt` → Build config. Just edit first line to put your trait name.Don't change anything else unless you know CMake.
-- `manifest.json` → Metadata (name, author, description). Used to generate `manifest.json` on foundry and used as manifest in forge. Use Ethos docs for reference on editing manifest.json. 
+- `manifest.json` → Metadata (name, author, description). Used to generate `manifest.json` on foundry and used as manifest in forge. Use Ethos docs for reference on editing manifest.json.  Just do not add binary in manifest.json as foundry based hard traits does not need it.
 - `.github/workflows/` → CI/CD. Don't edit unless adding new platforms.
 - `LICENSE` → Any non proprietary license.
 
