@@ -3,6 +3,7 @@
 Template for creating C Hard Traits for Ethos.
 
 Fork this repo to build your own native extension. CI workflows automatically build binaries for all 7 platforms (Linux, macOS, Windows, Termux) and submit your trait to Ethos Foundry.
+Also after forking or clicking use as template go to repo settings-> action -> general and change workflow permissions from read to read and write this allows repo to upload build on release.
 
 ## Quick Start
 
