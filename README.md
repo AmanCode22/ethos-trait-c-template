@@ -3,7 +3,13 @@
 Template for creating C Hard Traits for Ethos.
 
 Fork this repo to build your own native extension. CI workflows automatically build binaries for all 8 platforms (Linux, macOS, Windows, Termux) and submit your trait to Ethos Foundry.
-Also after forking or clicking use as template go to repo settings-> action -> general and change workflow permissions from read to read and write this allows repo to upload build on release.
+Also after forking or clicking use as template go to repo settings-> action -> general and change workflow permissions from read to read and write this allows repo to upload build on release. Also below it click Allow GitHub Actions to create and approve requests . For auto making pull requests you need to make a fine grained PAT token if you dont have make, you can reuse this in other traits also by just adding that repo in repo scope. If you dont have made one for traits go to your account settings -> developer settings -> personal access tokens -> fine grained token -> generate new token and fill the following
+- **Token Name:** Traits token
+- **Description:** Token for hard traits PR workflow
+- **Expiration:** Define a expiration time according to you,after this time you may need to renew token and update it in repo secrets.
+- **Repo Access:** Set this to all repositories if you dont want to update again and again for adding more traits or set to only selected repo to select trait repo.
+**Leave permissions unchanged**
+Copy the token and go to your trait's repo's settings -> secrets and variables -> actions -> click on add new repository secret with secret name `PAT_TOKEN` and value your token.
 
 ## Quick Start
 
