@@ -10,6 +10,7 @@ Also after forking or clicking use as template go to repo settings-> action -> g
 1. **Fork this repo** → Rename it to `ethos-trait-<your-trait-name>`.
 2. **Edit `manifest.json`** → Set your trait name, version, and description.
 3. **Edit `CMakeLists.txt** → Set trait name on first line.
+4. **(OPTIONAL) Create tags.txt → It helps someone find your trait by searching those specfic keywords.
 3. **Write your code** → Edit `src/trait.c` with your C functions.
 4. **Tag a release** → Push a tag like `v1.0.0`.
 5. **Wait for CI** → Workflows build binaries and open a PR to Foundry automatically.
@@ -29,7 +30,7 @@ That's it. I review the PR. If it passes, your trait is live.
 - `manifest.json` → Metadata (name, author, description). Used to generate `manifest.json` on foundry and used as manifest in forge. Use Ethos docs for reference on editing manifest.json.  Just do not add binary in manifest.json as foundry based hard traits does not need it.
 - `.github/workflows/` → CI/CD. Don't edit unless adding new platforms.
 - `LICENSE` → Any non proprietary license.
-
+- (OPTIONAL)`tags.txt` → List of tags seperated by a newline that may help users find your trait.
 ## Writing Functions
 
 Every function you want to use in Ethos must be exported in `src/trait.c`.
