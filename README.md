@@ -3,13 +3,7 @@
 Template for creating C Hard Traits for Ethos.
 
 Fork this repo to build your own native extension. CI workflows automatically build binaries for all 8 platforms (Linux, macOS, Windows, Termux) and submit your trait to Ethos Foundry.
-Also after forking or clicking use as template go to repo settings-> action -> general and change workflow permissions from read to read and write this allows repo to upload build on release. Also below it click Allow GitHub Actions to create and approve requests . For auto making pull requests you need to make a fine grained PAT token if you dont have make, you can reuse this in other traits also by just adding that repo in repo scope. If you dont have made one for traits go to your account settings -> developer settings -> personal access tokens -> fine grained token -> generate new token and fill the following
-- **Token Name:** Traits token
-- **Description:** Token for hard traits PR workflow
-- **Expiration:** Define a expiration time according to you,after this time you may need to renew token and update it in repo secrets.
-- **Repo Access:** Set this to all repositories if you dont want to update again and again for adding more traits or set to only selected repo to select trait repo.
-**Leave permissions unchanged**
-Copy the token and go to your trait's repo's settings -> secrets and variables -> actions -> click on add new repository secret with secret name `PAT_TOKEN` and value your token.
+.
 
 ## Quick Start
 
@@ -19,8 +13,8 @@ Copy the token and go to your trait's repo's settings -> secrets and variables -
 4. **(OPTIONAL) Create tags.txt → It helps someone find your trait by searching those specfic keywords.
 3. **Write your code** → Edit `src/trait.c` with your C functions.
 4. **Tag a release** → Push a tag like `v1.0.0`.
-5. **Wait for CI** → Workflows build binaries and open a PR to Foundry automatically.
-
+5. **Wait for CI** → Workflows build binaries
+6. **Open a PR to foundry** → You must open a pr to foundry for each version bump also, you can find manifest.json in releases use that for PR as that is different.
 That's it. I review the PR. If it passes, your trait is live.
 
 ## Requirements
@@ -59,7 +53,7 @@ Then list it in `manifest.json` under `functions`. The CI workflow reads this an
 2. Create a GitHub Release with a tag (e.g., `v1.0.0`).
 3. CI triggers automatically.
 4. Binaries upload to Releases.
-5. A PR opens on `ethos-foundry` with your manifest.
+5. Open PR a on `ethos-foundry` with your manifest(get it from releases of each release as it is not same as ones you created here).
 
 ## Updating
 
