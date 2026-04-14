@@ -1,4 +1,5 @@
 {
+  "description":"A short description of your trait here",
   "name": "<YOUR_TRAIT_NAME>",
   "functions": {
     "<FUNCTION_NAME>": {
